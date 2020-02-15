@@ -2,6 +2,8 @@ macos Catalina işletim sistemini çalıştırmak için gerekli EFI klasörü
 
 <b> İndirmeler için releases kısmını ziyaret edin </b>
 
+![](ss200214.png)
+
 <b>Özellikler</b>
 
 * Intel i7-7700HQ CPU
