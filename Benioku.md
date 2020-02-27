@@ -10,7 +10,7 @@ macos Catalina işletim sistemini çalıştırmak için gerekli EFI klasörü
 * Intel HD Graphics 630 / nVidia GTX 1050 Ti
 * 16GB 2400MHz DDR4 RAM
 * 15.6” 1080p IPS Display
-* 128GB Samsung M.2 SSD (SATA)
+* 128GB Samsung M.2 SSD (SATA)/ 256GB Samsung 860 EVO SSD
 * Intel Dual Band WiFi - 8265
 
 <b>Bilinen Sorununlar</b>
@@ -25,8 +25,6 @@ bu seçenekle ilgili bir isteğim yok. )
 
 * HDMI ( Nvidia ekran kartına bağlı olduğu için çalışmaz. Bu ekran kartı enerji tüketimini olumsuz etkilediği için SSDT ile kapatılmıştır. Optimus teknolojisi macos ortamında desteklenmemektir.
 
-*** VoodooPS2Controller *** Bu kext klavye kullanımı için gereklidir. Fakat trackpad kullanımı için gerekli olan VoodooI2C kext ile çakışma yaşamakta ve bu yüzden sistem açılışında kernel paniğe yol açmaktadır.
-Sağlanan config dosyasındaki "-v" komutu ile bu sorunun önüne geçilir. Eğer verbose mode kullanılmak istenmiyorsa açılışta apple logosu gelir gelmez rastgele bir tuşa basılarak sistemin boot etmesi sağlanabilir.
 
 <b>Bios Ayarları</b>
 
@@ -34,7 +32,9 @@ Sağlanan config dosyasındaki "-v" komutu ile bu sorunun önüne geçilir. Eğe
 
 * SATA istemcisi AHCI ( hali hazırda windows kullanmaktaysanız bu konuda google üzerinden arayarak daha detaylı bilgi edinin. )
 
-* Legacy Boot kapalı
+<b> İki işletim sistemi çalıştırmak </b>
+
+Yukarıda listelendiği gibi laptopumda iki tane SSD sürücü var. İki sürücü de GPT olarak biçimlendirilmiş durumda. Her işletim sistemi kendi yükleyicisi ile açılmakta. Opencore üzerinden windows10 yüklemesi yapmıyorum. Bunun yerine açılışta F12 tuşuna basarak bir seferlik boot yöneticisine girip oradan değiştiriyorum.
 
 <b>EFI klasörünün içindeki dosyaların açıklaması</b>
 
