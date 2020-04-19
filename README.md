@@ -6,7 +6,7 @@ I use this EFI folder to install, boot and upgrade macOS as it is provided. Read
 
 <b>#*Check releases tab for downloadable zip files*#</b> 
 
-![](ss200214.png)
+![](ss200420.png)
 
 
 <b>Specs</b>
@@ -28,7 +28,8 @@ I use this EFI folder to install, boot and upgrade macOS as it is provided. Read
 
 * HDMI ( it doesn't work because it is connected to nvidia card which is disabled with a SSDT. Optimus technology is not supported in macos environment. ) 
 
-<b>BIOS Options</b>
+<b>BIOS Options and version</b>
+* Current bios version is 1.9.3
 * Disable Secure Boot
 * Change SATA operation to AHCI ( google it to learn more before you proceed this action if you use windows already)
 
