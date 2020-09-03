@@ -49,15 +49,14 @@ I have two seperate ssd drives listed above. Windows is installed to 256gb and M
 
 Name | Explanation
 ---------|:---------
-
-	SSDT-ALS0 | 	Adding fake Ambient Light Device
-	SSDT-BRTK	 | 	Fixing F11 and F12 brightness keys	
-	SSDT-DGPU | 	Disabling Nvidia Card
-	SSDT-TPAE	 | 	Initializing touchpad in GPIO mode
-	SSDT-PLUG | 	Plug-in Type=1 (CPU )
-	SSDT-PNLF |	Enabling backlight control
-	SSDT-XPRW | 	Prevent random wake ups on AC Power
-	SSDT-USBX	 | 	Power Management based on Macbook14,3 for USB ports
+SSDT-ALS0 | Adding fake Ambient Light Device
+SSDT-BRTK | Fixing F11 and F12 brightness keys	
+SSDT-DGPU | Disabling Nvidia Card
+SSDT-TPAE | Initializing touchpad in GPIO mode
+SSDT-PLUG | Plug-in Type=1 (CPU )
+SSDT-PNLF | Enabling backlight control
+SSDT-XPRW | Prevent random wake ups on AC Power
+SSDT-USBX | Power Management based on Macbook14,3 for USB ports
 
 
 The SSDTs listed above are required for a smooth macOS experience. The SSDTs DMAC, MCHC, MEM2, SBUS are for only cosmetic purposes. They have no harm for anything so it is better to keep them.
