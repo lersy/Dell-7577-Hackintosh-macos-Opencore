@@ -73,26 +73,26 @@ Config file does not include SMBIOS parameters which is a must. One needs to pro
 
 * CPUFriendDataProvider.kext is set to 800 mhz and 0x80 balance power.
  
-* For voice over support you have to download audio files from Acidanthera GitHub ( https://github.com/acidanthera/OcBinaryData/tree/master/Resources ) and place it in OC / Resources/Audio. You have to enable quirk UEFI>Audio>PlayChime for bootchime. 
+* For voice over support you have to download audio files from [Team Acidanthera GitHub](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) and place it in OC / Resources/Audio. You have to enable quirk UEFI>Audio>PlayChime for bootchime. 
 
 * Misc>Security>Scan policy is set to “0” for displaying every possible drivers and operating systems. You can change it back to my preferred value ( 19858179 )  which excludes everything but macOS when you are done with your efi folder to scan safer.
 
 * If you dual boot like me explained above, you can disable quirk Misc>Boot>ShowPicker. In this way, it will directly start booting macOS for you as a normal Mac after Dell logo.
 
-* Stock WiFi ( there are two projects for enabling native wifi card on macOS as of data 09/2020.  One of them is named OpenIntelWireless project by [OpenIntelWireless team] (https://github.com/OpenIntelWireless) and the other one is [Black80211-Catalina] (https://github.com/usr-sse2/Black80211-Catalina) by usr-sse2. But keep that in mind that they are still under heavy development and you should follow instructions carefully on their respective GitHub pages. )
+* Stock WiFi ( there are two projects for enabling native wifi card on macOS as of data 09/2020.  One of them is named OpenIntelWireless project by [OpenIntelWireless team](https://github.com/OpenIntelWireless) and the other one is [Black80211-Catalina](https://github.com/usr-sse2/Black80211-Catalina) by usr-sse2. But keep that in mind that they are still under heavy development and you should follow instructions carefully on their respective GitHub pages. )
 
-<b> To make a bootable usb stick please follow [Dortania creating the Usb instructions] (https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) depending on your current accessible OS. </b>
+<b> To make a bootable usb stick please follow [Dortania creating the Usb instructions](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) depending on your current accessible OS. </b>
 
 
 <b> CREDITS </b>
 
 [Team Acidanthera](https://github.com/acidanthera) for OpenCore boot loader and AppleALC, CpuFriend, Lilu, RealtekRTL8111, VirtualSMC and its plugins, VoodooPS2Controller and Whatevergreen kexts. 
 
-[Team VoodooI2C] (https://github.com/VoodooI2C/VoodooI2C) for VoodooI2C and VoodooI2CHID kexts.
+[Team VoodooI2C](https://github.com/VoodooI2C/VoodooI2C) for VoodooI2C and VoodooI2CHID kexts.
 
-[Team OpenIntelWireless] (https://github.com/OpenIntelWireless) for IntelBluetooth firmware and injector kexts.
+[Team OpenIntelWireless](https://github.com/OpenIntelWireless) for IntelBluetooth firmware and injector kexts.
 
-[Corpnewt] (https://github.com/corpnewt) for phyton script to build USBMap kext.
+[Corpnewt](https://github.com/corpnewt) for phyton script to build USBMap kext.
 
 #################
 
