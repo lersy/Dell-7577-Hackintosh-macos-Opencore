@@ -30,8 +30,6 @@ I highly recommend you to read this page before using this efi folder.
 
 * 2.1 audio ( there is an id which enables subwoofer but I don't use it because the id I use in my config.plist has better compatibility with headphone. Detailed explanations about each id can be found at AppleALC manual page. The laptop has ALC256 on it. )
 
-* Thunderbolt ( I also have no idea about it because I don't have a device to check whether it is working or not. My version of USBPorts.kext does not include Type+C port. If you have it, please let me know so I can update. )
-
 * HDMI ( it doesn't work because it is connected to nvidia card which is disabled with a SSDT. Optimus technology is not supported in macos environment. There are workarounds for second display with thunderbolt however I have no idea about them because I do not have a device to check. If you have sufficient info and patches, please let me know. ) 
 
 <b>BIOS Options and version</b>
@@ -52,7 +50,7 @@ Name | Explanation
 SSDT-ALS0 | Adding fake Ambient Light Device
 SSDT-BRTK | Fixing F11 and F12 brightness keys	
 SSDT-DGPU | Disabling Nvidia Card
-SSDT-TPAE | Initializing touchpad in GPIO mode
+SSDT-TPDX | Initializing touchpad in GPIO mode
 SSDT-PLUG | Plug-in Type=1 (CPU )
 SSDT-PNLF | Enabling backlight control
 SSDT-XPRW | Prevent random wake ups on AC Power
@@ -67,7 +65,9 @@ The SSDTs listed above are required for a smooth macOS experience. The SSDTs DMA
 
 * Config file does not include SMBIOS parameters which is a must. One needs to provide own values. There are guides here and there. Your friend is google as always. For ROM adress you can use your builtin ethernet card MAC adress. MacSerial by Acidanthera is a good way to obtain proper serial and motherboard serial numbers. UUID can be generated with terminal command uuidgen. Make it produced at least five times to be sure it is unique enough. For working imessage and facetime all should be set in a sensible way and make sure that they are not used by someone else either hackintosh or real mac.
 
-* USBMap.kext is set to Macbookpro14,3. If you want to use a different model you should also change the correspond model name in the info.plist inside the kext. Fingerprint device is closed to save battery and avoid long waiting before root access. it does not work anyway for now because apple does not allow to use third party ones.
+* Thunderbolt Devices ( To enable Thunderbolt support, Smbios should be set to MacbookPro14,1. Since I have no thunderbolt device, I do not use this SMBIOS by default for better power management. But if you need to use thunderbolt devices, you can use Macbookpro14,1 SMBIOS and see notes below about the USBMap.kext Then it works with no further configuration. Courtesy of [@dbookuz](https://github.com/dbookuz) )
+
+* USBMap.kext is set to Macbookpro14,3. If you want to use a different SMBIOS you should also change the correspond model name in the info.plist inside the kext. Fingerprint device is closed to save battery and avoid long waiting before root access. it does not work anyway for now because apple does not allow to use third party ones.
 
 * CPUFriendDataProvider.kext is set to 800 mhz and 0x80 balance power.
  
