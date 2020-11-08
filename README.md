@@ -6,7 +6,8 @@ I can install, update and upgrade macOS on my laptop with this folder yet it is 
 
 It is better to read OpenCore configuration.pdf file for detailed explanations. It may be the best documented piece of project across hackintoshing community. 
 
-Another good source is dortania guide. It can be considered as a simple version of OpenCore configuration. At the same time it provides some tweaks which you can’t find on configuration.pdf file so definitely it is a good place to check out. 
+Another good source is dortania guide. It can be considered as a simple version of OpenCore configuration. At the same time it provides some tweaks which you can’t find on configuration.pdf file so it is a good place to check out. <b> To make a bootable usb stick please follow [Dortania creating the Usb instructions](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) </b>
+
 
 I highly recommend you to read this page before using this efi folder.
 
@@ -47,27 +48,20 @@ I have two seperate ssd drives listed above. Windows is installed to 256gb and M
 
 Name | Explanation
 ---------|:---------
-SSDT-ALS0 | Adding fake Ambient Light Device
-SSDT-BRTK | Fixing F11 and F12 brightness keys	
-SSDT-DGPU | Disabling Nvidia Card
-SSDT-TPDX | Initializing touchpad in GPIO mode
+SSDT-DXTR | Miscellaneous SSDT tweaks for better compability
+SSDT-EC-USBX-LAPTOP | Power related tweaks	
+SSDT-GPI0 | Touchpad related tweaks
 SSDT-PLUG | Plug-in Type=1 (CPU )
-SSDT-PNLF | Enabling backlight control
-SSDT-XPRW | Prevent random wake ups on AC Power
-SSDT-USBX | Power Management based on Macbook14,3 for USB ports
+SSDT-PNLF | Graphic related tweaks
 
-
-The SSDTs listed above are required for a smooth macOS experience. The SSDTs DMAC, MCHC, MEM2, SBUS are for only cosmetic purposes. They have no harm for anything so it is better to keep them.
-
+The SSDTs listed above are required for a smooth macOS experience. Please leave them as it is first. If you have problems with your device, then start editing it for your suits.
 
 
 <b> To Do List and Things to Consider </b>
 
 * Config file does not include SMBIOS parameters which is a must. One needs to provide own values. There are guides here and there. Your friend is google as always. For ROM adress you can use your builtin ethernet card MAC adress. MacSerial by Acidanthera is a good way to obtain proper serial and motherboard serial numbers. UUID can be generated with terminal command uuidgen. Make it produced at least five times to be sure it is unique enough. For working imessage and facetime all should be set in a sensible way and make sure that they are not used by someone else either hackintosh or real mac.
 
-* Thunderbolt Devices ( To enable Thunderbolt support, Smbios should be set to MacbookPro14,1. Since I have no thunderbolt device, I do not use this SMBIOS by default for better power management. But if you need to use thunderbolt devices, you can use Macbookpro14,1 SMBIOS and see notes below about the USBMap.kext Then it works with no further configuration. Courtesy of [@dbookuz](https://github.com/dbookuz) )
-
-* USBMap.kext is set to Macbookpro14,3. If you want to use a different SMBIOS you should also change the correspond model name in the info.plist inside the kext. Fingerprint device is closed to save battery and avoid long waiting before root access. it does not work anyway for now because apple does not allow to use third party ones.
+* USBMap.kext is set to Macbookpro14,1. If you want to use a different SMBIOS you should also change the correspond model name in the info.plist inside the kext. Fingerprint device is closed to save battery and avoid long waiting before root access. it does not work anyway for now because apple does not allow to use third party ones.
 
 * CPUFriendDataProvider.kext is set to 800 mhz and 0x80 balance power.
  
@@ -77,20 +71,17 @@ The SSDTs listed above are required for a smooth macOS experience. The SSDTs DMA
 
 * If you dual boot like me explained above, you can disable quirk Misc>Boot>ShowPicker. In this way, it will directly start booting macOS for you as a normal Mac after Dell logo.
 
-* Stock WiFi ( there are two projects for enabling native wifi card on macOS as of date 09/2020.  One of them is named OpenIntelWireless project by [OpenIntelWireless team](https://github.com/OpenIntelWireless) and the other one is [Black80211-Catalina](https://github.com/usr-sse2/Black80211-Catalina) by usr-sse2. But keep that in mind that they are still under heavy development and you should follow instructions carefully on their respective GitHub pages. )
-
-<b> To make a bootable usb stick please follow [Dortania creating the Usb instructions](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) depending on your current accessible OS. </b>
-
-
 <b> CREDITS </b>
 
 [Team Acidanthera](https://github.com/acidanthera) for OpenCore boot loader and AppleALC, CpuFriend, Lilu, RealtekRTL8111, VirtualSMC and its plugins, VoodooPS2Controller and Whatevergreen kexts. 
 
 [Team VoodooI2C](https://github.com/VoodooI2C/VoodooI2C) for VoodooI2C and VoodooI2CHID kexts.
 
-[Team OpenIntelWireless](https://github.com/OpenIntelWireless) for IntelBluetooth firmware and injector kexts.
+[Team OpenIntelWireless](https://github.com/OpenIntelWireless) for IntelBluetooth firmware and Airportitlwm kexts.
 
 [Corpnewt](https://github.com/corpnewt) for phyton script to build USBMap kext.
+
+[@dbookuz](https://github.com/dbookuz) for working Thunderbolt Devices ( To enable Thunderbolt support, Smbios should be set to MacbookPro14,1. Since I have no thunderbolt device to try, it is courtesy of him. )
 
 #################
 
