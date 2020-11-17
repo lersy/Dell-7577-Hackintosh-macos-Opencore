@@ -15,7 +15,7 @@ I highly recommend you to read this page before using this efi folder.
 
 <b>#*Macos Big Sur NOTE: There is a new efi to check with name lersy-november-update-2-alpha in releases tab but not all of the problems have been solved yet. Most obvious problem is sleep issues for me now. It is better to stick to catalina but if you want to jump , you can give a try to this efi as well*#</b> 
 
-![](ss200907.png)
+![](ss201117.jpg)
 
 
 <b>Specs</b>
@@ -68,8 +68,6 @@ The SSDTs listed above are required for a smooth macOS experience. Please leave 
 * CPUFriendDataProvider.kext is set to 800 mhz and 0x80 balance power.
  
 * For voice over support you have to download audio files from [Team Acidanthera GitHub](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) and place it in OC / Resources/Audio. You have to enable quirk UEFI>Audio>PlayChime for bootchime. 
-
-* Misc>Security>Scan policy is set to “0” for displaying every possible drivers and operating systems. You can change it back to my preferred value ( 19858179 )  which excludes everything but macOS when you are done with your efi folder to scan safer.
 
 * If you dual boot like me explained above, you can disable quirk Misc>Boot>ShowPicker. In this way, it will directly start booting macOS for you as a normal Mac after Dell logo.
 
