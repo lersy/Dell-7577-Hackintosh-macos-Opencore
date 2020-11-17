@@ -13,6 +13,8 @@ I highly recommend you to read this page before using this efi folder.
 
 <b>#*Check releases tab for downloadable zip files*#</b> 
 
+<b>#*Macos Big Sur NOTE: There is a new efi to check with name lersy-november-update-2-alpha in releases tab but not all of the problems have been solved yet. Most obvious problem is sleep issues for me now. It is better to stick to catalina but if you want to jump , you can give a try to this efi as well*#</b> 
+
 ![](ss200907.png)
 
 
