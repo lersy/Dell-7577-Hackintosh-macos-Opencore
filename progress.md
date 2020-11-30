@@ -40,12 +40,14 @@ I highly recommend you to read this page before using prebuilt EFI folders. <b>#
 
 To enable advanced BIOS options, execute ModifiedGrubShell.efi at Opencore Picker Screen and enter given commands below for each settings. Be aware, values can be different for you so it is best to find your own values. To read how to find your own values click [here](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html#turning-off-cfg-lock-manually).
 
-| ----------------------------| ------------------------------- |
+| Command | Explanation    |
+| ----------- | ------- |
 | setup_var 0x4DE 0x00  | Disables CFG Lock	     |
 
 This command disables CFG Lock which is a must to run macOS. If you do not want to disable it, you have to set Kernel>Quirks>AppleXcpmCfgLock to YES for a workaround. 
 
-| ----------------------------| ------------------------------- |
+| Command | Explanation   |
+| ----------- | ------- |
 | setup_var 0x889 0x00  | Disables WakeOnLan	     |
 
 This command disables wake on lan BIOS settings so laptop can sleep on battery and AC without problem. Without disabling this setting, your laptop will have sleep issues on AC. On battery sleep works well because it is set to disable on battery by default. No mandatory to run macOS but advised for proper sleep and wake functions.  
