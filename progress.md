@@ -14,7 +14,7 @@ I highly recommend you to read this page before using prebuilt EFI folders. <b>#
 * 128GB Samsung M.2 SSD (SATA) / 256GB Samsung 860 Evo SSD 
 * Intel Dual Band WiFi - 8265 & Intel Bluetooth
 
-| ------------------------ | --------------- | ------------------------------- |
+---------|:--------- |:---------
 | macOS Big Sur 	 |    Supported | Current
 | macOS Catalina 	|    Supported | Need further configurations
 | macOS Mojave 	|    Supported | Need further configurations
@@ -31,8 +31,8 @@ I highly recommend you to read this page before using prebuilt EFI folders. <b>#
 <b>BIOS version and options</b>
 * Current bios version is 1.11.0
 * Disable Secure Boot
-Change SATA operation to AHCI ( google it to learn more before you proceed this action if you use windows already to not lose your existed data on windows partition )
-Disable Virtualization
+* Change SATA operation to AHCI ( google it to learn more before you proceed this action if you use windows already to not lose your existed data on windows partition )
+* Disable Virtualization
 
 
 <details>
@@ -42,7 +42,6 @@ To enable advanced BIOS options, execute ModifiedGrubShell.efi at Opencore Picke
 
 | ----------------------------| ------------------------------- |
 | setup_var 0x4DE 0x00  | Disables CFG Lock	     |
-
 
 This command disables CFG Lock which is a must to run macOS. If you do not want to disable it, you have to set Kernel>Quirks>AppleXcpmCfgLock to YES for a workaround. 
 
@@ -63,7 +62,7 @@ This command disables wake on lan BIOS settings so laptop can sleep on battery a
 
 * If you dual boot like me explained above, you can disable quirk Misc>Boot>ShowPicker. In this way, it will directly start booting macOS for you as a normal Mac after Dell logo.
 
-To enable Virtualization, Booter>Quirks>DevirtualiseMmio can be set to YES as a workaround but this is not the preferred method and can cause problem.
+* To enable Virtualization, Booter>Quirks>DevirtualiseMmio can be set to YES as a workaround but this is not the preferred method and can cause problem.
 
 <b> Dual Booting </b>
 
