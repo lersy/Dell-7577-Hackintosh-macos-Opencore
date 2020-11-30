@@ -14,12 +14,12 @@ I highly recommend you to read this page before using prebuilt EFI folders. <b>#
 * 128GB Samsung M.2 SSD (SATA) / 256GB Samsung 860 Evo SSD 
 * Intel Dual Band WiFi - 8265 & Intel Bluetooth
 
----------|:--------- |:---------
-| macOS Big Sur 	 |    Supported | Current
-| macOS Catalina 	|    Supported | Need further configurations
-| macOS Mojave 	|    Supported | Need further configurations
-| macOS High Sierra 	|    Supported | Need further configurations
-
+| OS Version | EFI Version    | Known Problems related to version | EFI Sanity Check |
+| ----------- | ------- | ---------- | ------------------- |
+| macOS Big Sur  | December  | None except general          | Yes             |
+| macOS Catalina  | December  | None except general          | No             |
+| macOS Mojave  | December | None except general          | No              |
+| macOS High Sierra   | December | None except general          | No              |
 
 <b>Known Problems</b>
 
