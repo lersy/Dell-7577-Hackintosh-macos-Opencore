@@ -21,22 +21,24 @@ I highly recommend you to read this page before using prebuilt EFI folders. <b>#
 | macOS Mojave  | December | None except general          | No              |
 | macOS High Sierra   | December | None except general          | No              |
 
-<b>Known Problems</b>
+<details>
+<summary><b>General Known Problems</b></summary>
 
 * SDCard Reader ( I have no idea about it. I have never tried to make it work nor I have a plan to do so in the future. If you find a solution, please let me know. )
 
 * 2.1 audio ( there is an id which enables subwoofer but I don't use it because the id I use in my config.plist has best compatibility with headphone. Detailed explanations about each id can be found at AppleALC manual page. The laptop has ALC256 on it. )
+</details>
 
+<details>
+<summary><b>BIOS version and options</b></summary>
 
-<b>BIOS version and options</b>
 * Current bios version is 1.11.0
 * Disable Secure Boot
 * Change SATA operation to AHCI ( google it to learn more before you proceed this action if you use windows already to not lose your existed data on windows partition )
 * Disable Virtualization
 
 
-<details>
-<summary> See required advanced BIOS settings  </summary>
+***Required advanced BIOS settings***
 
 To enable advanced BIOS options, execute ModifiedGrubShell.efi at Opencore Picker Screen and enter given commands below for each settings. Be aware, values can be different for you so it is best to find your own values. To read how to find your own values click [here](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html#turning-off-cfg-lock-manually).
 
@@ -54,7 +56,8 @@ This command disables wake on lan BIOS settings so laptop can sleep on battery a
 
 </details>
 
-<b> To Do List and Workarounds </b>
+<details>
+<summary><b> To Do List and Workarounds </b></summary>
 
 * Config file does not include SMBIOS parameters which is a must. One needs to provide own values. MacSerial by Acidanthera is a good way to obtain proper serial and motherboard serial numbers. UUID can be generated with terminal command “uuidgen”. Builtin ethernet, wifi or thunderbolt device MAC address can be used as ROM value. For working imessage and facetime all should be set in a sensible way and make sure that they are not used by someone else either hackintosh or real Mac. When you change a value ( SN, MLB, UUID or ROM ) you should change all other values to prevent apple servers being suspicious about your account.
 
@@ -65,12 +68,16 @@ This command disables wake on lan BIOS settings so laptop can sleep on battery a
 * If you dual boot like me explained above, you can disable quirk Misc>Boot>ShowPicker. In this way, it will directly start booting macOS for you as a normal Mac after Dell logo.
 
 * To enable Virtualization, Booter>Quirks>DevirtualiseMmio can be set to YES as a workaround but this is not the preferred method and can cause problem.
+</details>
 
-<b> Dual Booting </b>
+<details>
+<summary><b> Dual Booting </b></summary>
 
 I have two seperate ssd drives listed above. Windows is installed to 256gb and Macos is installed to 128GB. I do not boot Windows10 through Opencore. Both ssd drives are partitioned GUID partition schema type and both use their own bootloader. You can make switch with F12 key when you see DELL logo on starts. I strictly do not recommend booting windows through OpenCore.
+</details>
 
-<b> CREDITS </b>
+<details>
+<summary><b> CREDITS </b></summary>
 
 [Team Acidanthera](https://github.com/acidanthera) for OpenCore boot loader and AppleALC, Brightness Keys, Lilu, RealtekRTL8111, VirtualSMC and its plugins, VoodooPS2Controller and Whatevergreen kexts. 
 
@@ -85,5 +92,6 @@ I have two seperate ssd drives listed above. Windows is installed to 256gb and M
 #################
 
 Thanks to everyone who helped me with patience and developers for maintaing kexts, drivers, scripts and patches.
+</details>
 
 This whole process is made because of fucking educational purposes. 
