@@ -6,7 +6,7 @@ I can install, update and upgrade macOS on my laptop with this folder yet it is 
 Do not use prebuilt EFI folders before you read this page otherwise it will end up with a failure.
 
 <b>#*Check releases tab for downloadable zip files*#</b> 
-
+> Release cycle note: I plan to release a version on first tuesday of the each month and third tuesday of the each month.
 
 <b>Specifacations</b>
 
@@ -49,6 +49,7 @@ Do not use prebuilt EFI folders before you read this page otherwise it will end 
 <details>
 <summary><b>CHAPTER I - BIOS version and options</b></summary>
  
+
 |||||    BIOS Version  ||||||    1.11.0    |||||
 
 * Disable Secure Boot
@@ -66,7 +67,7 @@ To enable advanced BIOS options, execute ModifiedGrubShell.efi at Opencore Picke
 | ----------- | ------- |
 | setup_var 0x4DE 0x00  | Disables CFG Lock	     |
 
-This command disables CFG Lock which is a must to run macOS. If you do not want to disable it, you have to set Kernel>Quirks>AppleXcpmCfgLock to YES for a workaround. 
+This command disables CFG Lock which is a must to run macOS. 
 
 | Command | Explanation   |
 | ----------- | ------- |
@@ -93,7 +94,7 @@ Tested SMBIOS models by me and returned zero errors as follow: Macbookpro14,1 ; 
 
 * To enable VT, Booter>Quirks>DevirtualiseMmio can be set to YES as a workaround
 
-* You have to enable quirk UEFI>Audio>PlayChime for bootchime. 
+* You have to set UEFI>Audio>PlayChime to NO for disabling bootchime. (scary sound when you boot into OC ) 
 
 * If you dual boot like me explained below in CHAPTER III, you can disable quirk Misc>Boot>ShowPicker. In this way, it will directly start booting macOS for you as a normal Mac without timeout phase.
 
