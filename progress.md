@@ -61,8 +61,6 @@ This command disables wake on lan BIOS settings so laptop can sleep on battery a
 
 * Config file does not include SMBIOS parameters which is a must. One needs to provide own values. MacSerial by Acidanthera is a good way to obtain proper serial and motherboard serial numbers. UUID can be generated with terminal command “uuidgen”. Builtin ethernet, wifi or thunderbolt device MAC address can be used as ROM value. For working imessage and facetime all should be set in a sensible way and make sure that they are not used by someone else either hackintosh or real Mac. When you change a value ( SN, MLB, UUID or ROM ) you should change all other values to prevent apple servers being suspicious about your account.
 
-* USBMap.kext is set to Macbookpro14,1. If you want to use a different SMBIOS, you should also change the correspond model name in the info.plist inside the kext in order to make usb ports working. Fingerprint device is closed to save battery and avoid long waiting before root access. It does not work because apple does not allow to use third party ones.
-
 * For voice over support you have to download audio files from [Team Acidanthera GitHub](https://github.com/acidanthera/OcBinaryData/tree/master/Resources) and place it in OC / Resources/Audio. You have to enable quirk UEFI>Audio>PlayChime for bootchime. 
 
 * If you dual boot like me explained above, you can disable quirk Misc>Boot>ShowPicker. In this way, it will directly start booting macOS for you as a normal Mac after Dell logo.
@@ -87,7 +85,7 @@ I have two seperate ssd drives listed above. Windows is installed to 256gb and M
 
 [Piker-Alpha](https://github.com/Piker-Alpha) for ssdtPRGen script
 
-[@dbookuz](https://github.com/dbookuz) , [DeMikeyyy](https://github.com/DeMikeyyy) , [wadimw](https://github.com/wadimw) and [uzairblaoch](https://github.com/uzairblaoch) for sharing their knowledge and testing EFI folders.
+[uzairblaoch](https://github.com/uzairblaoch) for direct HDMI usage
 
 #################
 
