@@ -1,6 +1,5 @@
 Prebuilt EFI folders for Dell Inspiron 7577 to make it bootable with macOS through OpenCore boot loader.
 
-![](ss201201.jpg)
 I can install, update and upgrade macOS on my laptop with this folder yet it is not guaranteed that it will work for you as well. Even though they are same models, two computers can have differences. Proceed all processes at your own risk. 
 
 Do not use prebuilt EFI folders before you read this page otherwise it will end up with a failure.
@@ -129,3 +128,4 @@ Thanks everyone who helped me with patience and developers for maintaing kexts, 
 </details>
 
 This whole process is made because of fucking educational purposes. 
+![](ss201201.jpg)
