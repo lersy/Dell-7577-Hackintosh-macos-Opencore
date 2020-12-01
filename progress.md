@@ -47,7 +47,7 @@ Specifications Note: As of December 2020 Prebuilt EFI, I stopped providing gener
 
 <details>
 <summary><b>CHAPTER I - BIOS version and options</b></summary>
-
+|             |         |
 | ----------- | ------- | 
 | BIOS Version  | 1.11.0 |
 
