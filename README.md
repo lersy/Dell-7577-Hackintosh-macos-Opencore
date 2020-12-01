@@ -1,4 +1,5 @@
 Prebuilt EFI folders for Dell Inspiron 7577 to make it bootable with macOS through OpenCore boot loader.
+
 ![](ss201201.jpg)
 I can install, update and upgrade macOS on my laptop with this folder yet it is not guaranteed that it will work for you as well. Even though they are same models, two computers can have differences. Proceed all processes at your own risk. 
 
@@ -26,7 +27,7 @@ Do not use prebuilt EFI folders before you read this page otherwise it will end 
 
 * 2.1 audio ( there is an id which enables subwoofer but I don't use it because the id I use in my config.plist has best compatibility with headphone. Detailed explanations about each id can be found at AppleALC manual page. The laptop has ALC256 on it. )
 
-* Rest? Rest works for my usage ( Usb ports, direct HDMI, Wifi, Ethernet etc. etc. ) If you have identical model but non-working device, submit an issue.
+> Rest? Rest works for my usage ( Usb ports, direct HDMI, Wifi, Ethernet etc. etc. ) If you have identical model but non-working device, submit an issue.
 
 
 | OS Version | EFI Version    | Known Problems related to version | Tested |
