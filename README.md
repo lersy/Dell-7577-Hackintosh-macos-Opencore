@@ -1,4 +1,4 @@
-![](ss201202.jpg)
+![](ss201202.png)
 
 Prebuilt EFI folders for Dell Inspiron 7577 to make it bootable with macOS through OpenCore boot loader.
 
