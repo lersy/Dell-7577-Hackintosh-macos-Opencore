@@ -16,7 +16,7 @@ Do not use prebuilt EFI folders before you read this page otherwise it will end 
 * 128GB Samsung M.2 SSD (SATA) / 256GB Samsung 860 Evo SSD 
 * Intel Dual Band WiFi 8265 & Bluetooth
 
-Specifications Note: As of December 2020 Prebuilt EFI, I stopped providing general EFI folder for a wider target. From this date onward, EFI folder will be targeting completely identical builds for best performance and convenience. If you do not have the identical build ( e.g Dell 7577 - i5 & GTX 1060), please google for other repositories.Most demanding customizations perform at ACPI level with specific devices. Although community follows other paths for easier configuration, ACPI method whenever possible ( without rename patch of course ) is more better according to my experience over years. 
+> Specifications Note: As of December 2020 Prebuilt EFI, I stopped providing general EFI folder for a wider target. From this date onward, EFI folder will be targeting completely identical builds for best performance and convenience. If you do not have the identical build ( e.g Dell 7577 - i5 & GTX 1060), please google for other repositories.Most demanding customizations perform at ACPI level with specific devices. Although community follows other paths for easier configuration, ACPI method whenever possible ( without rename patch of course ) is more better according to my experience over years. 
 
 <b>General Known Problems</b>
 
@@ -47,9 +47,8 @@ Specifications Note: As of December 2020 Prebuilt EFI, I stopped providing gener
 
 <details>
 <summary><b>CHAPTER I - BIOS version and options</b></summary>
-|             |         |
-| ----------- | ------- | 
-| BIOS Version  | 1.11.0 |
+ 
+|||||    BIOS Version  ||||||    1.11.0    |||||
 
 * Disable Secure Boot
 
