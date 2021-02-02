@@ -130,4 +130,3 @@ Thanks everyone who helped me with patience and developers for maintaing kexts, 
 </details>
 
 This whole process is made because of fucking educational purposes. 
-![](ss201201.jpg)
