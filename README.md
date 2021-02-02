@@ -18,7 +18,7 @@ Do not use prebuilt EFI folders before you read this page otherwise it will end 
 * 128GB Samsung M.2 SSD (SATA) / 256GB Samsung 860 Evo SSD 
 * Intel Dual Band WiFi 8265 & Bluetooth
 
-> Specifications Note: As of December 2020 Prebuilt EFI, I stopped providing general EFI folder for a wider target. From this date onward, EFI folder will be targeting completely identical builds for best performance and convenience. If you do not have the identical build { e.g Dell 7577 - i5 & GTX 1060 [see wadimw's repo](https://github.com/wadimw/dell-7577-hackintosh) } it may be working with different models but even the same model is not quaranteed. 
+> Specifications Note: As of December 2020 Prebuilt EFI, I stopped providing general EFI folder for a wider target. From this date onward, EFI folder will be targeting completely identical builds for best performance and convenience. It may be working with different models but even the same model is not quaranteed. For Dell 7577 with i5 & GTX 1060 I recommend you to check [wadimw's repo](https://github.com/wadimw/dell-7577-hackintosh) 
 
 <b>General Known Problems</b>
 
