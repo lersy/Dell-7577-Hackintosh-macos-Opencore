@@ -76,7 +76,9 @@ Enter given commands below for each settings. When it is done, type “exit” w
   
 # Config Settings
 
-  * Config file does not include SMBIOS parameters ( MLB, ROM, SystemSerialNumber and SystemUUID ) which is a must. One needs to provide own values. MacSerial by Acidanthera is a good way to obtain proper serial and motherboard serial numbers. UUID can be generated with terminal command “uuidgen”. Builtin ethernet, wifi or thunderbolt device MAC address can be used as ROM value. For working iMessage and FaceTime all should be set in a sensible way and make sure that they are not used by someone else either hackintosh or real Mac. When you change a value ( SN, MLB, UUID or ROM ) you should change all other values to prevent apple servers being suspicious about your account. Tested SMBIOS models by me and returned zero errors as follow: Macbookpro14,1 ; Macbookpro14,2 ; Macbookpro 14,3.
+  * Config file does not include SMBIOS parameters ( MLB, ROM, SystemProductName, SystemSerialNumber and SystemUUID ) which is a must. One needs to provide own values. MacSerial by Acidanthera is a good way to obtain proper serial and motherboard serial numbers. UUID can be generated with terminal command “uuidgen”. Builtin ethernet, wifi or thunderbolt device MAC address can be used as ROM value. For working iMessage and FaceTime all should be set in a sensible way and make sure that they are not used by someone else either hackintosh or real Mac. When you change a value ( SN, MLB, UUID or ROM ) you should change all other values to prevent apple servers being suspicious about your account. Tested SystemProductName models by me and returned zero errors as follow: Macbookpro14,1 ; Macbookpro14,2 ; Macbookpro 14,3.
+
+> You should provide values for PlatformInfo>Generic> MLB, ROM, SystemProductName, SystemSerialNumber and SystemUUID
 
   * To enable boot chime, UEFI>Audio>PlayChime should be set to YES.
 
