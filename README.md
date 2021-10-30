@@ -17,6 +17,8 @@ Check releases page for downloadable EFI zip files.
 | macOS Catalina  	| None except universal          	| No              	|
 | macOS Mojave	| None except universal          	| No              	|
 
+> Table is for October21 release. It is recommended for everyone. It has better compability with each macOS versions.
+
 # Laptop Components 
 
 | Device Type		| Component 	|
@@ -42,9 +44,7 @@ Check releases page for downloadable EFI zip files.
 
 * Disable Secure Boot
 
-* Change SATA Operation to AHCI ( make a google search for detailed information about changing SATA Operation models before proceed this step. )
-
-* Disable Virtualization
+* Change SATA Operation to AHCI
 
 <details>
 <summary>Advanced BIOS Settings for Enthusiastic People after successful installation </summary>
