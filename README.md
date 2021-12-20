@@ -17,7 +17,7 @@ Check releases page for downloadable EFI zip files.
 | macOS Catalina  	| None except universal          	| No              	|
 | macOS Mojave	| None except universal          	| No              	|
 
-> Table is for October21 release. It is recommended for everyone. It has better compability with each macOS versions.
+> Table is for December21 release. It is recommended for everyone. It has better compability with each macOS versions.
 
 # Laptop Components 
 
@@ -40,30 +40,25 @@ Check releases page for downloadable EFI zip files.
 
 # BIOS Version and Settings
 
-> BIOS Version: 1.14.0
+> BIOS Version: 1.15.0
 
 * Disable Secure Boot
 
 * Change SATA Operation to AHCI
 
 <details>
-<summary>Advanced BIOS Settings for Enthusiastic People after successful installation </summary>
+<summary>Recommended advanced BIOS settings after successful installation </summary>
 
   
-<b> IMPORTANT NOTE1: All changes done through this screen will be back to default when you perform a BIOS upgrade or re-flash the same version. It also defaults itself if you reset CMOS physically. </b>
+<b> IMPORTANT NOTE1: All changes done through this command screen will be back to default values when you perform a BIOS upgrade or re-flash the same version. It also defaults itself if you reset CMOS physically. </b>
 
 <b>IMPORTANT NOTE2: Even though steps described here are not required for a successful boot process, it is strongly advised. Steps here are my preferred methods but excluded from config in order to prevent new comers’ mistakes. </b>
 
 To enable advanced BIOS options;
 
-1- Set Misc>Boot>HideAuxiliary to YES
+Execute AdvancedBiosSettings at Opencore Picker screen
 
-2- Execute AdvancedBiosSettings at Opencore Picker screen
-
-Enter given commands below for each settings. When it is done, type “exit” without quotes to exit this command shell screen.
-
-
-
+Enter given commands below for each settings. When it is done, type “exit” or "reboot" without quotes to exit this command shell screen.
 
 
 | Command			| Explanation 		|
