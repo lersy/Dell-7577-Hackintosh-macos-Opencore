@@ -1,4 +1,6 @@
-# Dell Inspiron Gaming 7577 & macOS 
+# Dell Inspiron Gaming 7577 & macOS
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| [English](https://github.com/lersy/Dell-7577-Hackintosh-macos-Opencore/blob/master/README.md) | Türkçe
 
 Dell Inspiron 7577 model notebook ile OpenCore bot yöneticisi aracılığıyla macOS yüklenebilmesi için yapılandırılmış EFI dosyaları
 
