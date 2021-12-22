@@ -1,101 +1,92 @@
-macos Catalina işletim sistemini çalıştırmak için gerekli EFI klasörü
+# Dell Inspiron Gaming 7577 & macOS 
 
-<b> İndirmeler için releases kısmını ziyaret edin </b>
+Dell Inspiron 7577 model notebook ile OpenCore bot yöneticisi aracılığıyla macOS yüklenebilmesi için yapılandırılmış EFI dosyaları
 
-![](ss200214.png)
+Her ne kadar ben bu dosyalar ile notebook üzerinde macOS yükleme, güncelleme ve yükseltme işlemleri yapabilsem de aynı durum sizin için geçerli olmayabilir. Aynı model isimlerine sahip olsalar bile iki cihaz arasında farklılıklar olabilmektedir. Lütfen tüm işlemleri kendi insiyatifinizle uygulayın.
 
-<b>Özellikler</b>
+İndirilebilir EFI dosyaları için Releases kısmını ziyaret edin.
 
-* Intel i7-7700HQ CPU
-* Intel HD Graphics 630 / nVidia GTX 1050 Ti
-* 16GB 2400MHz DDR4 RAM
-* 15.6” 1080p IPS Display
-* 128GB Samsung M.2 SSD (SATA)/ 256GB Samsung 860 EVO SSD
-* Intel Dual Band WiFi - 8265
+<b> Bu sayfayı dikkatle okuyup anlamadan önce indirilen dosyayı kullanmaya çalışmanız halinde hata ile karşılacaksınız.</b>
 
-<b>Bilinen Sorununlar</b>
+# Desteklenen macOS sürümleri
 
-* Dahili WiFi çalışmaz ( Son günlerde ortaya çıkan bir kext ile bu konuda gelişmeler bulunmakta. Her ne kadar dahili wifi kartını çalıştırmak 
-yarım saate kadar mümkün olsa işlem her zaman hata ile sonuçlanıp bilgisayarı resetliyor. Uyumlu bir wifi kartı alıp bilgisayarınıza takabilirsiniz. Benim şu an
-bu seçenekle ilgili bir isteğim yok. )
+| İşletim Sistemi		| Bilinen Problemler 			| Test Durumu 	|
+| ----------- 		| ---------- 				| ------	|
+| macOS Monterey  	| Genel Problemler + Bluetooth          		| Evet             	|
+| macOS Big Sur  	| Genel  Problemler         	| Hayır            	|
+| macOS Catalina  	| Genel Problemler          	| Hayır              	|
+| macOS Mojave	| Genel Problemler          	| Hayır              	|
 
-* SDCard Okuyucu ( Hiç kullanmadığım için çalışıp çalışmadığıyla ilgili bir fikrim yok. Önemli bir ihtiyaçsa gerekli düzenlemelerle çalışabileceği kanısındayım.
+> Tablo 21December dosyası içindir. Her zaman en son yayınlanan dosya tavsiye edilir.
 
-* 2.1 ses ( Subwoofer etkinleştirilebilse de batarya kullanımını olumsuz etkilediğini düşündüğüm için subwoofer olmadan ses kullanmaktayım. )
+# Notebook Donanımı 
 
-* HDMI ( Nvidia ekran kartına bağlı olduğu için çalışmaz. Bu ekran kartı enerji tüketimini olumsuz etkilediği için SSDT ile kapatılmıştır. Optimus teknolojisi macos ortamında desteklenmemektir.
+| Cihaz Türü		| Modeli 	|
+|-------------	| --------- 	|			
+| İşlemci			| Intel i7-7700HQ |
+| Grafik		| Intel HD Graphics 630 / Nvidia GTX 1050 Ti |
+| RAM		| 16GB 2400MHz DDR4 RAM |
+| Ağ		| Intel Dual Band WiFi 8265 & Bluetooth |
+| Ekran		| 15.6” 1080p IPS Display |
+| Depolama		| 128GB Samsung M.2 SSD (SATA) / 256GB Samsung 860 Evo SSD |
 
+# Genel Problemler
 
-<b>Bios Ayarları</b>
+* Nvidia 1050ti grafik kartı çalışmaz. ( Nvidia Optimus teknolojisi macOS üzerinde desteklenmez.)
 
-* Secure Boot kapalı
+* SDCard Okuyucu ( Belki çalışıyordur ama bir fikrim yok. Hiç kullanmadım. )
 
-* SATA istemcisi AHCI ( hali hazırda windows kullanmaktaysanız bu konuda google üzerinden arayarak daha detaylı bilgi edinin. )
+* 2.1 Audio ( Subwoofer desteğini farklı bir AppleALC kimliği ile etkinleştimek mümkün görünse de kullandığım AppleALC kimliği daha uygun ve kulaklık problemi yaratmamaktadır. Dilerseniz AppleALC GitHub sayfası üzerinde detaylara bakabilirsiniz. Notebookta bulunan kodek ALC256. )
 
-<b> İki işletim sistemi çalıştırmak </b>
+# BIOS Sürümü ve Ayarları
 
-Yukarıda listelendiği gibi laptopumda iki tane SSD sürücü var. İki sürücü de GPT olarak biçimlendirilmiş durumda. Her işletim sistemi kendi yükleyicisi ile açılmakta. Opencore üzerinden windows10 yüklemesi yapmıyorum. Bunun yerine açılışta F12 tuşuna basarak bir seferlik boot yöneticisine girip oradan değiştiriyorum.
+> BIOS Sürümü: 1.15.0
 
-<b>EFI klasörünün içindeki dosyaların açıklaması</b>
+* Secure Boot kapatın 
 
-						                      	###ACPI###
+* SATA Operation kısmında AHCI seçin
+
+<details>
+<summary>Tavsiye edilen başarılı yükleme sonrası gelişmiş BIOS ayarları </summary>
+
 	
-	SSDT-ALS0		      --- Sahte bir ışık sensörü ekler
-	SSDT-BRTK		      --- F11 ve F12 aydınlatma tuşlarını etkinleştirir
-	SSDT-DGPU 		    --- Nvidia ekran kartını devre dışı bırakır
-	SSDT-HPET 		    --- IRQ düzenlemeleri ve RTC düzenlemeleri sağlar
-	SSDT-I2C		      --- İzleme dörtgenini etkinleştirir
-	SSDT-PLUG 		    --- İşlemci için düzenleme sağlar
-	SSDT-PNLF 		    --- Ekran aydınlığını etkinleştirir
-	SSDT-PRW 		      --- Güç yönetimini düzzenler
-	SSDT-SBUS-MHCH		--- ACPI örneği oluşturur
-	SSDT-USB		      --- USB portları için güç düzenlemeleri sağlar
-	SSDT-XOSI		      --- İşletim sistemi çağrılarına macos'u ekler
-							
-							                      ###Drivers###
-	
-	ApfsDriverLoader	--- Apfs dosya sistemi sürücüsü
-	FwRuntimeServices	--- Hafıza haritalandırması için gereklidir ( Aptiomemoryfix.efi yerine kullanılır )
-	HFSPlus			      --- HFS+ dosya sistemi sürücüsü
-	*OcQuirks		      --- "FwRuntimeServices" sürücüsünü Clover bootloader için kullanılır hale getirir.
-				
-							                      ###Kexts###
-	
-	AppleALC		          --- ALC 256 kodeği için ses etkinleştirmesi sağlar
-	CPUFriend		          --- İşlemci için düzgün güç yönetimi sağlar
-	CPUFriendDataProvider	--- CPUFriend için gerekli verileri sağlar
-	Lilu			            --- Diğer kernel eklentileri için temel oluşturur
-	RealtekRTL8111		    --- Ethernet portunu etkinleştirir
-	SATA100			          --- 100 serisi çipset için destek sağlar
-	SMCBatteryManager	    --- Bataryayı etkinleştirir
-	USBPorts		          --- USB portlarını düzenler ( google üzerinden usb haritalandırması ile daha fazla bilgi edinilebilir. )
-	VerbStub		          --- Kulaklık cızırtı sorununu çözer
-	VirtualSMC		        --- SMC emülatörü sağlar
-	VoodooI2C		          --- İzleme dörtgenini etkinleştirir
-	VoodooI2CHID		      --- İzleme dörtgeni için gerekli verileri sağlar
-	VoodooPS2Controller	  --- Klavyeyi etkinleştirir
+Burada bahsedilen adımlar başarılı bir yükleme ve kullanım için zorunlu olmasa da kullanım açısından tavsiye edilen yöntemlerdir. Ben bu gelişmiş ayarlarla kullanıyor olmama rağmen config dosyasından bunları çıkarttım çünkü yeni başlayanların kafasını karıştırabiliyor.
+
   
+<b> Önemli Uyarı 1: Bu kısımda yapacağınız değişiklikler BIOS güncellemesi ya da aynı sürümü tekrar yüklemeniz sonrasında varsayılan ayarlara geri dönecektir. Eğer BIOS pilini fiziksel olarak söküp takarsanız yine sıfırlanır. Aynı adımların tekrar uygulanması gerekir.</b>
+
+
+Bu kısımdaki komutları girebilmeniz için aşağıdaki adımı uygulayın;
+
+OpenCore seçici kısmında AdvancedBIOSSetings uygulamasını çalıştırın
+
+Aşağıda açıklamalarıya birlikte verilmiş kodları uygulama ekranında yazıp “Enter” tuşu ile uygulayın. İşlemleri bitirdiğinizde “reboot” yazarak sistemi tekrar başlatabilirsiniz (tırnak işaretleri hariç)
+
+
+| Komut			| Açıklama 		|
+|---------		| ----------- 		|			
+| setup_var 0x4DE 0x00	| CFG Lock Kapatır	|
+
+> CFG LOCK HAKKINDA UYARI: Bu komutu uyguladıktan sonra, config dosyası içerisinden Kernel>Quirks>AppleXcpmCfgLock ayarını kapalı duruma getirin. İkisinin bi arada kullanılması çakışmalar yaratabilir. Bu özelliği kapatmak için komutu uyguladık.
+
+  </details>  
   
-  <b>Yapılacaklar listesi</b>
-  
-  * İndirilen dosyadaki config dosyası SMBIOS değerleri boş bırakılmıştır. Bu değerleri herkesin kendisi oluşturması gerekir. İnternette bununla ilgili bir çok rehber bulunmaktadır.
-  ROM adresi için ethernet MAC adresini kullanabilirsiniz. Macserial uygulaması ile seri ve ana kart seri numaraları oluşturabilirsiniz. UUID terminal komutu "uuidgen" ile oluşturabilir.
-  Ben sistemimde tüm imessage ve facetime dahil Apple servislerini kullanmaktayım.
-  
-  * USBPort.kext kendi laptopum için hazırlanmıştır. Sizin cihazınız için bios sürümü farklılığı gibi bir çok sebepten ötürü değişiklik gösterebilir.
-  Eğer sağlanan kext ile USB2 ve USB3 cihazlarınızı kullanamıyorsanız kendi kernel eklentinizi oluşturmanız gerekebilir. Hackintool uygulaması arayüz sağladığı için tavsiye edilir.
-  
-  * CpuFriendDataProvider.kext ayarları boşta 800 mhz ve dengeli güç olarak ayarlanmıştır. Değişiklik yapmak isterseniz Corpnewt tarafından hazırlanan CPUFriendFriend piton kodlarıyla kendi
-  isteğiniz değerleri oluşturabilirsiniz.
-  
-  * Corpnewt tarafından hazırlanan SSDTTime piton kodları bilgisayarnızla ilgili gerekli SSDT hazırlamaları için kullanabilir.
-  
-  * İndirdiğiniz dosyayı arşivden çıkarın. Config üzerinde SMBIOS ile ilgili gerekli ayarlamaları yapıp kaydetdikten sonra EFI klasörünü kopyalayıp EFI bölümüne yapıştırın. EFI bölümüne ulaşmak için
-  bir uygulama kullanabilirsiniz. Ya da terminal üzerinden önce "diskutil list" komutu ile bağlı sürücüleri görebilir uygun sürücünün adresini not alıp yine terminalde "sudo diskutil mount diskXsY" komutu ile bağlayabilirsiniz. 
-  X ve Y yerine sağladığınız veriler gelmelidir.
-  
-  <b>Bu EFI klasörleri macos işletim sistemi yüklendikten sonra kullanılmak için tasarlanmıştır.</b>
-  
-  OSX86 camiasında bulunan herkese teşekkür ederim.
-  
-  Tüm bu mevzu eğitimsel amaçların siklenmesi ile oluşturulmuştur.
+# Config Ayarları
+
+* Config dosyası sistemi çalıştırabilmek için gereken SMBIOS değerlerini ( MLB, ROM, SystemProductName, SystemSerialNumber and SystemUUID ) içermez. Her kullanıcı kendi değerlerini oluşturmak zorundadır. Google üzerinde konu ile ilgili araştırma yapın. Kullandığınız değerlerin gerçek bir Mac ya da Hackintosh kullanıcısı tarafından kullanılmadığından emin olmalısınız. Aksi takdirde Apple serverları kimliğinizi red edip uygulamaların kullanılmasına izin vermez. Ben iMessage, FaceTime dahil tüm hizmetleri kullanmaktayım. Test ettiğim SMBIOS modelleri: MacbookPro14,1 ; MacbookPro14,2 ; MacbookPro14,3’dür. Sistem MacbookPro15,1 vb gibi SMBIOS modelleri ile de yükleme yapabilir. İşlemci ailesi bu MacbookPro sınıfında olduğu için bu değerleri seçtim ve yıllardır bunları kullanıyorum.
+
+> You should provide values for PlatformInfo>Generic> MLB, ROM, SystemProductName, SystemSerialNumber and SystemUUID
+
+> Oluşturduğunuz SMBIOS değerlerini config dosyası içinde PlatformInfo>Generic kısmına yazmalısınız. ( MLB, ROM, SystemProductName, SystemSerialNumber ve SystemUUID
+kısımları doldurulmalıdır )
+
+* Eğer OpenCore ekranını görmeden direkt olarak macOS yüklemenmesini istiyorsanız config dosyası içinde Misc>Boot>ShowPicker değerini NO yapın ve Misc>Security>ScanPolicy kısmına 65795 değerini girin.
+
+# macOS ve Windows’u OpenCore ile Yükleme
+
+<b> Hayır bunu yapmayın! </b> Windows yüklenmesinin OpenCore üzerinden yüklenmesine kesinlikle karşıyım ve hiçbir artısı yoktur. En iyi çoklu seçim yapma şekli F12’ye basarak yapılandır.
+# Disclaimer
+
+Notebookunuzda oluşabilecek hiçbir sorundan beni sorumlu tutamazsanız. Eğer sizi arayıp polis olduğunu söyleyenler olursa kimlik bilgilerinizi de vermemelisiniz. Boktan hayatınız için kendinizi suçlayın.
+
+<strong> Tüm bu işlemler eğitimsel amaçların siklenmesi ile olmuştur. Ticari kullanım yapılamaz. </strong>
