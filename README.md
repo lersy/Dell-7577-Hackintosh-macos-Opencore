@@ -1,6 +1,6 @@
 # Dell Inspiron Gaming 7577 & macOS                                      
 
-|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| English | [Türkçe](https://github.com/lersy/Dell-7577-Hackintosh-macos-Opencore/blob/master/Benioku.md)
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| English | [Türkçe](https://github.com/lersy/Dell-7577-Hackintosh-macos-Opencore/blob/master/Benioku.md)
 
 Prebuilt EFI folders for Dell Inspiron 7577 to make it bootable with macOS through OpenCore boot loader.
 
