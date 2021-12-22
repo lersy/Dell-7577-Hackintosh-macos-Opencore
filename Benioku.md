@@ -75,7 +75,6 @@ Aşağıda açıklamalarıya birlikte verilmiş kodları uygulama ekranında yaz
 
 * Config dosyası sistemi çalıştırabilmek için gereken SMBIOS değerlerini ( MLB, ROM, SystemProductName, SystemSerialNumber and SystemUUID ) içermez. Her kullanıcı kendi değerlerini oluşturmak zorundadır. Google üzerinde konu ile ilgili araştırma yapın. Kullandığınız değerlerin gerçek bir Mac ya da Hackintosh kullanıcısı tarafından kullanılmadığından emin olmalısınız. Aksi takdirde Apple serverları kimliğinizi red edip uygulamaların kullanılmasına izin vermez. Ben iMessage, FaceTime dahil tüm hizmetleri kullanmaktayım. Test ettiğim SMBIOS modelleri: MacbookPro14,1 ; MacbookPro14,2 ; MacbookPro14,3’dür. Sistem MacbookPro15,1 vb gibi SMBIOS modelleri ile de yükleme yapabilir. İşlemci ailesi bu MacbookPro sınıfında olduğu için bu değerleri seçtim ve yıllardır bunları kullanıyorum.
 
-> You should provide values for PlatformInfo>Generic> MLB, ROM, SystemProductName, SystemSerialNumber and SystemUUID
 
 > Oluşturduğunuz SMBIOS değerlerini config dosyası içinde PlatformInfo>Generic kısmına yazmalısınız. ( MLB, ROM, SystemProductName, SystemSerialNumber ve SystemUUID
 kısımları doldurulmalıdır )
