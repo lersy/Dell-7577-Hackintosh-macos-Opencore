@@ -6,7 +6,7 @@ Prebuilt EFI folders for Dell Inspiron 7577 to make it bootable with macOS throu
 
 I can install, update and upgrade macOS on my laptop with this folder yet it is not guaranteed that it will work for you as well. Even though they are same models, two computers can have differences. Proceed all processes at your own risk.
 
-Check releases page for downloadable EFI zip files.
+Check releases page for downloadable EFI zip files. There is a high chance that I will not update it frequently. Head over to "Dortania Guide" and get the information you need when something goes wrong. The best source is "Opencore Configuration" document of course. 
 
 <b> Do not use prebuilt EFI folders before you read this page otherwise it will end up with a failure. </b>
 
@@ -14,12 +14,13 @@ Check releases page for downloadable EFI zip files.
 
 | OS Version 		| Known Problems 			| Tested 	|
 | ----------- 		| ---------- 				| ------	|
-| macOS Monterey  	| Universal + Bluetooth          		| Yes             	|
+| macOS Ventura  	| Universal + Bluetooth          		| No             	|
+| macOS Monterey  	| Universal + Bluetooth          		| No             	|
 | macOS Big Sur  	| None except universal          	| No            	|
 | macOS Catalina  	| None except universal          	| No              	|
 | macOS Mojave	| None except universal          	| No              	|
 
-> Table is for December21 release. It is recommended for everyone. It has better compability with each macOS versions.
+> Table is for the latest release. It should have better compability with each macOS versions.
 
 # Laptop Components 
 
